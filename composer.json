@@ -1,0 +1,28 @@
+{
+    "name": "mudpi/mudpi-ui",
+    "description": "A lightweight web dashboard to monitor MudPi.",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["mudpi", "garden", "ui", "php", "raspberry pi"],
+    "homepage": "https://mudpi.app",
+    "time": "2020-01-01",
+    "authors": [
+        {
+            "name": "Eric Davisson",
+            "email": "eric@mudpi.app",
+            "homepage": "http://ericdavisson.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@mudpi.app",
+        "issues": "https://github.com/mudpi/mudpi-ui/issues",
+        "source": "https://github.com/mudpi/mudpi-ui",
+        "docs": "https://mudpi.app/docs"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

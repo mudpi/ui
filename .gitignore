@@ -1,0 +1,20 @@
+node_modules/
+scripts/
+tests/
+vendor/
+configs/includes/
+package-lock.json
+mudpi.config
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE configs
+.idea/
+.DS_Store
