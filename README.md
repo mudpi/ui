@@ -1,4 +1,4 @@
-<img alt="MudPi Smart Garden" title="MudPi Smart Garden" src="https://mudpi.app/img/mudPI_LOGO_small_flat.png" width="200px">
+<img alt="MudPi Smart Garden" title="MudPi Smart Garden" src="https://mudpi.app/img/mudPI_LOGO_small_flat.png" width="100px">
 
 # MudPi UI
 > A lightweight web dashboard to monitor MudPi.
