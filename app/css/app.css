@@ -1,0 +1,164 @@
+#app {
+	transition:opacity .3s ease, transform .4s ease;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.loader {
+	border: 6px solid #f3f3f3; /* Light grey */
+	border-top: 6px solid #98ca56; /* Primary green */
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.logo {
+	max-width: 36px;
+}
+
+.errors {
+	position: absolute;
+	left: 50%;
+	top:15px;
+	transform:translateX(-50%);
+	min-width:75%;
+}
+
+.network {
+	position: relative;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+.network.transition-out, #app.transition-out{
+	opacity:0;
+	transform:translateY(-10px);
+	visibility: hidden;
+}
+
+.network:hover {
+	background:#f9f9f9;
+}
+
+.network .security {
+	align-self:flex-end;
+}
+
+.network .signal {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.wifi-strength {
+	display: flex;
+	flex-direction: row;
+	align-items:flex-end;
+	justify-content: center;
+}
+
+.wifi-strength .bar{
+	width:6px;
+	background:#ddd;
+	margin-right:4px;
+	transition: height .4s ease;
+}
+
+.wifi-strength .bar.active{
+	background:#5c9347;
+}
+
+.wifi-strength .bar.inactive{
+	height:0 !important;
+}
+
+.wifi-strength .bar:nth-child(1){
+	height: 10px;
+}
+
+.wifi-strength .bar:nth-child(2){
+	height: 20px;
+	transition: height .6s ease;
+}
+
+.wifi-strength .bar:nth-child(3){
+	height: 30px;
+	transition: height .7s ease;
+}
+
+.wifi-strength .bar:nth-child(4){
+	height: 40px;
+	margin-right:0;
+	transition: height .8s ease;
+}
+
+.modal {
+	top:100px;
+	left:50%;
+	transform: translateX(-50%) translateY(-20px);
+	opacity:0;
+	visibility: hidden;
+	transition: transform .4s cubic-bezier(.79, .14, .15, .86), opacity .6s ease;
+}
+
+.modal.open{
+	opacity:1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}
+
+ .opacity-0 {
+ 	opacity: 0;
+ }
+ .opacity-25 {
+ 	opacity: .25;
+ }
+ .opacity-50 {
+ 	opacity: .5;
+ }
+ .opacity-75 {
+ 	opacity: .75;
+ }
+ .opacity-100 {
+ 	opacity: 1;
+ }
+
+.actions {
+	transition: opacity .1s;
+}
+
+
+.overlay {
+	background: linear-gradient(162deg, #fff0, #ffffffba, #fff);
+	background-size: auto;
+	background-size: 600% 600%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	transition: background-position .7s ease, opacity .2s ease;
+	background-position: 100% 100%;
+}
+
+.overlay.transition-out {
+	opacity: 0;
+	background-position: 0 0;
+	visibility: hidden;
+}
+
+@media (max-width: 678px) {
+	#title {
+		font-size:2.125rem;
+	}
+}

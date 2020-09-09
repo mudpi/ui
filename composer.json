@@ -1,7 +1,7 @@
 {
-    "name": "mudpi/mudpi-ui",
+    "name": "mudpi/ui",
     "description": "A lightweight web dashboard to monitor MudPi.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "library",
     "keywords": ["mudpi", "garden", "ui", "php", "raspberry pi"],
     "homepage": "https://mudpi.app",
@@ -16,9 +16,17 @@
     ],
     "support": {
         "email": "info@mudpi.app",
-        "issues": "https://github.com/mudpi/mudpi-ui/issues",
-        "source": "https://github.com/mudpi/mudpi-ui",
+        "issues": "https://github.com/mudpi/ui/issues",
+        "source": "https://github.com/mudpi/ui",
         "docs": "https://mudpi.app/docs"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mudpi\\": "app/",
+            "Mudpi\\Tools\\": "app/tools/",
+            "Mudpi\\Ajax\\": "app/ajax/"
+        },
+        "files": ["includes/helpers.php", "includes/config.php"]
     },
     "config": {
         "sort-packages": true
