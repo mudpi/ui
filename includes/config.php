@@ -8,7 +8,7 @@ define('MUDPI_WIFI_INTERFACE', 'wlan0');
 
 //Configs and paths
 define('MUDPI_CONFIG', '/etc/mudpi');
-define('MUDPI_WEB_ROOT', '/var/www');
+define('MUDPI_WEB_ROOT', '/var/www/html');
 define('MUDPI_WEB_PATH',  MUDPI_WEB_ROOT.'/ui');
 define('MUDPI_CONFIG_CORE', MUDPI_CONFIG.'/core');
 define('MUDPI_CONFIG_NETWORKING', MUDPI_CONFIG.'/networking');

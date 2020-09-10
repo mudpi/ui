@@ -1,0 +1,2 @@
+<?php 
+exec('sudo reboot');

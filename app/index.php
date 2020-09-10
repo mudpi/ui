@@ -10,7 +10,7 @@ handle_csrf();
 set_csrf_token();
 
 if (!empty($_COOKIE['setup_completed'])) {
-	header("Location: wifi.php");
+	header("Location: dashboard.php");
 }
 
 include 'templates/welcome.php';

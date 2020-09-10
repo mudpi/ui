@@ -26,7 +26,7 @@ setTimeout(function () {
 button.addEventListener('click', function() {
 	content.classList.add('transition-out');
 	button.classList.add('transition-out');
-	if (step >= 7) {
+	if (step >= 1) {
 		overlay.classList.remove('transition-out');
 		setTimeout(function() {
 			window.location.href = 'logs.php';
