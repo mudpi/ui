@@ -18,7 +18,7 @@ $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT);
 // Get the stored keys and print it 
 $redis_keys = $redis->keys("*"); 
 
-$config = unserialize(file_get_contents(MUDPI_PATH_CORE."/mudpi.config"));
+$config = json_decode(file_get_contents(MUDPI_PATH_CORE."/mudpi.config"));
 //$config[] = $data; //append data to config
 
 include 'templates/dashboard.php';
