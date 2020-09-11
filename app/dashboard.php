@@ -13,10 +13,13 @@ setcookie("setup_completed", date("d-m-Y H:i:s"), time() + (3600 * 12)); // expi
 
 //Connecting to Redis server on localhost 
 $redis = new Redis(); 
-$redis->connect('127.0.0.1', 6379); 
-echo "Connection to server sucessfully"; 
+$redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
+
 // Get the stored keys and print it 
 $redis_keys = $redis->keys("*"); 
+
+$config = unserialize(file_get_contents(MUDPI_PATH_CORE."/mudpi.config"));
+//$config[] = $data; //append data to config
 
 include 'templates/dashboard.php';
 

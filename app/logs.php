@@ -10,9 +10,9 @@ handle_csrf();
 set_csrf_token();
 
 $wpa_config = shell_exec('tail -f '.MUDPI_CONFIG_WPA_SUPPLICANT);
-$mudpi_log = shell_exec('tail -256 '.MUDPI_CONFIG.'/logs/mudpi.out.log');
-$mudpi_error_log = shell_exec('tail -256 '.MUDPI_CONFIG.'/logs/mudpi.err.log');
-$auto_ap_log = shell_exec('tail -256 '.MUDPI_CONFIG.'/logs/auto_hotspot.log');
+$mudpi_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/mudpi.out.log');
+$mudpi_error_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/mudpi.err.log');
+$auto_ap_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/auto_hotspot.log');
 $sprout_data = unserialize(file_get_contents("/etc/mudpi/sprout.txt"));
 
 include 'templates/logs.php';
