@@ -23,7 +23,7 @@ define('MUDPI_WPA_CTRL_INTERFACE', '/var/run/wpa_supplicant');
 define('MUDPI_CONFIG_NGINX', '/etc/nginx/nginx.conf');
 define('MUDPI_CONFIG_LIGHTTPD', '/etc/lighttpd/lighttpd.conf');
 define('MUDPI_PATH_WEB_ROOT', '/var/www/html');
-define('MUDPI_PATH_UI',  MUDPI_WEB_ROOT.'/ui');
+define('MUDPI_PATH_UI',  MUDPI_PATH_WEB_ROOT.'/ui');
 
 // Redis
 define('MUDPI_REDIS_HOST', '127.0.0.1');
