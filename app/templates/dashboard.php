@@ -20,10 +20,13 @@
 			<div class="column sm:column-12 md:column-12 lg:column-10">
 				<div class="content px-2">
 					<h1 class="h2 text-primary" id="title">Dashboard</h1>
-					<p class="mb-4 text-grey-dark" id="message">View the contents of MudPi log Files below.</p>
+					<p class="mb-4 text-grey-dark" id="message">View the contents of MudPi log Files below. <?php echo $started_at; ?></p>
 
-					<h3 class="h3 text-primary">Redis Keys</h3>
-					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($redis_keys); ?></code></pre>
+					<h3 class="h3 text-primary">Workers</h3>
+					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($sensor_workers); ?></code></pre>
+
+					<h3 class="h3 text-primary">Sensors</h3>
+					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($sensor_workers); ?></code></pre>
 
 					<h3 class="h3 text-primary">Config</h3>
 					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($config); ?></code></pre>
