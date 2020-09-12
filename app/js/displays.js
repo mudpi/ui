@@ -5,14 +5,12 @@ var errors_list = document.getElementById("errors");
 var message_input = document.querySelector('[name="message"]');
 var duration_input = document.querySelector('[name="duration"]');
 var topic_input = document.querySelector('[name="topic"]');
-var csrf_input = document.querySelector('input[name="csrf_token"]');
 
 button.addEventListener('click', function() {
 	var formdata = new FormData();
 	formdata.append("message", message_input.value);
 	formdata.append("duration", duration_input.value);
 	formdata.append("topic", topic_input.value);
-	formdata.append("csrf_token", csrf_input.value);
 	makeRequest('ajax/display_message.php', 'POST', formdata);
 });
   
@@ -42,7 +40,8 @@ function makeRequest(url, type = 'POST' , data = null, callback = null) {
 		request.onreadystatechange = callback;
 	}
 	request.open(type, url);
-	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //or application/json;charset=UTF-8
+	request.setRequestHeader('Accept', 'application/json'); //or application/json;charset=UTF-8
+	setCSRFHeader(request, type, data);
 	request.send(data);
 }
 
@@ -74,4 +73,12 @@ function handleResponse() {
     	//Problem with the request (500 error)
 	  }
 	}
+}
+
+function setCSRFHeader(xhr, type, d) {
+    var csrfToken = document.querySelector('meta[name=csrf_token]').getAttribute('content');
+    if (/^(POST|PATCH|PUT|DELETE)$/i.test(type)) {
+    	d.append("csrf_token", csrfToken);
+        xhr.setRequestHeader("X-CSRF-Token", csrfToken);
+    }
 }
