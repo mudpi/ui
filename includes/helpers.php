@@ -188,16 +188,16 @@ function parseReading($type, $value = null) {
 			return $value;
 			break;
 		case "soil":
-			return {"Moisture": $value};
+			return ["Moisture" => $value ];
 			break;
 		case "float":
-			return {"Float": $value};
+			return ["Float" => $value];
 			break;
 		case "temperature":
-			return {"Temperature": $value};
+			return ["Temperature" => $value];
 			break;
 		case "rain":
-			return {"Rain": $value};
+			return ["Rain" => $value];
 			break;
 	}
 }
