@@ -26,8 +26,8 @@
 
 					<h3 class="h3 text-primary">Sensors</h3>
 					<div class="columns">
+					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($sensors); ?></code></pre>
 						<?php foreach($sensors as $sensor) { ?>
-						<?php echo $sensor; ?>
 						<div class="column column-12 sm:column-12 md:column-4 lg:column-3">
 							<div class="box">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
