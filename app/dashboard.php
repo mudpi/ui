@@ -15,7 +15,7 @@ setcookie("setup_completed", date("d-m-Y H:i:s"), time() + (3600 * 12)); // expi
 $redis = new Redis(); 
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
 
-$started_at = $redis->get("started_at")
+$started_at = $redis->get("started_at");
 
 // Get the stored keys and print it 
 $redis_keys = $redis->keys("*"); 
