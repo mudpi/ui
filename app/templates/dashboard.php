@@ -30,17 +30,17 @@
 						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box bg-primary py-1 text-white">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
-								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></span>
+								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?> - </span>
 								<?php if(isset($sensor->pin)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
 								<?php }?></span>
 								<?php if(isset($sensor->address)) { ?>
-									<span class="text-grey-dark-lightest text-xs mb-1">x<?php echo dechex($sensor->address); ?>
+									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->address; ?>
 								<?php }?></span>
 								<div class="columns">
 									<?php foreach($sensor->value as $key => $value) { ?>
-										<div class="column px-0">
-											<p class="text-white font-bold h3"><?php echo $value ?></p>
+										<div class="column px-1">
+											<p class="text-white font-bold <?php echo count($sensor->value) > 3 ? 'h4' : 'h3'; ?>"><?php echo $value ?></p>
 											<p class="text-white font-bold text-xs"><?php echo ucfirst($key); ?></p>
 										</div>
 									<?php }?>
