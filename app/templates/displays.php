@@ -64,16 +64,16 @@
 									<div class="column column-12 columns">
 										<div class="mb-2 column column-10">
 											<label class="label mb-1 text-white" for="name">Message</label>
-											<input class="input rounded-2 py-2 text-grey-darker px-2 mnw-50" placeholder="Type message here..." type="text" name="message">
+											<input class="input rounded-2 py-2 text-grey-darker px-2" placeholder="Type message here..." type="text" name="message">
 										</div>
 										<div class="mb-2 column column-2">
 											<label class="label mb-1 text-white" for="name">Duration</label>
-											<input class="input rounded-2 py-2 text-grey-darker px-2 mnw-50" value="60" placeholder="15" type="number" name="duration">
+											<input class="input rounded-2 py-2 text-grey-darker px-2" value="60" placeholder="15" type="number" name="duration">
 										</div>
 
 										<div class="mb-1 column column-12">
 											<?php echo csrf_field(); ?>
-											<input class="input rounded-2 py-2 text-grey-darker px-2 mnw-50" value="<?php echo $display->topic; ?>" placeholder="mudpi/lcd" type="hidden" name="topic">
+											<input class="input rounded-2 py-2 text-grey-darker px-2" value="<?php echo $display->topic; ?>" placeholder="mudpi/lcd" type="hidden" name="topic">
 											<button id="create" class="button rounded-2 is-primary px-3 py-2 mb-2"><?php echo _("Send"); ?></button>
 										</div>
 									</div>
