@@ -5,7 +5,7 @@ var errors_list = document.getElementById("errors");
 var message_input = document.querySelector('[name="message"]');
 var duration_input = document.querySelector('[name="duration"]');
 var topic_input = document.querySelector('[name="topic"]');
-var csrf_input = document.querySelector('[name="csrf_field"]');
+var csrf_input = document.querySelector('[name="csrf_token"]');
 
 button.addEventListener('click', function() {
 	var formdata = new FormData();
