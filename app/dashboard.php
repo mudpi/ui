@@ -32,6 +32,11 @@ foreach($sensor_workers as $worker) {
 	array_push($sensors, ...$worker->sensors);
 }
 
+foreach($sensors as $sensor) {
+	$sensor->key = slug($sensor->name);
+	$sensor->value = $redis->get($sensor->key);
+}
+
 include 'templates/dashboard.php';
 
 ?>
