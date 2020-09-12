@@ -27,6 +27,7 @@
 					<h3 class="h3 text-primary">Sensors</h3>
 					<div class="columns">
 						<?php foreach($sensors as $sensor) { ?>
+						<?php echo $sensor; ?>
 						<div class="column column-12 sm:column-12 md:column-4 lg:column-3">
 							<div class="box">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
