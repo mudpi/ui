@@ -29,7 +29,7 @@ $sensor_workers = array_merge(array_filter($config->workers, function($v) {
 $sensors = [];
 
 foreach($sensor_workers as $worker) {
-	array_merge($sensors, $worker->sensors);
+	$sensors[] = $worker->sensors;
 }
 
 include 'templates/dashboard.php';
