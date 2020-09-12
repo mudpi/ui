@@ -16,6 +16,7 @@
 	<body>
 		<div id="app" class="mnh-full">
 			<div class="container">
+			<?php include "partials/navigation.php"; ?>
 			<div class="columns is-centered">
 			<div class="column sm:column-12 md:column-12 lg:column-10">
 				<div class="content px-2">
