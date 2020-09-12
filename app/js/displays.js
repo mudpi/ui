@@ -5,12 +5,14 @@ var errors_list = document.getElementById("errors");
 var message_input = document.querySelector('[name="message"]');
 var duration_input = document.querySelector('[name="duration"]');
 var topic_input = document.querySelector('[name="topic"]');
+var csrf_input = document.querySelector('[name="csrf_field"]');
 
 button.addEventListener('click', function() {
 	var formdata = new FormData();
 	formdata.append("message", message_input.value);
 	formdata.append("duration", duration_input.value);
 	formdata.append("topic", topic_input.value);
+	formdata.append("csrf_token", csrf_input.value);
 	makeRequest('ajax/display_message.php', 'POST', formdata);
 });
   

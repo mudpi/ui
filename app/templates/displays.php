@@ -31,10 +31,6 @@
 			.logo {
 				width:64px;
 			}
-
-			.input {
-				box-shadow:inset 0 1px 3px rgba(50,50,93,.05),inset 0 2px 5px rgba(0, 0, 0, 0.21);
-			}
 		</style>
 	</head>
 	<body>
@@ -60,25 +56,23 @@
 								<?php }?></span>
 								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $display->rows; ?> x <?php echo $display->columns; ?></p>
 								
-								<div class="columns is-centered">
-									<div class="column column-12 columns">
+									<div class="columns">
 										<div class="mb-2 column column-10">
-											<label class="label mb-1 text-white" for="name">Message</label>
+											<label class="label mb-1 text-primary" for="name">Message</label>
 											<input class="input rounded-2 py-2 text-grey-darker px-2" placeholder="Type message here..." type="text" name="message">
 										</div>
 										<div class="mb-2 column column-2">
-											<label class="label mb-1 text-white" for="name">Duration</label>
-											<input class="input rounded-2 py-2 text-grey-darker px-2" value="60" placeholder="15" type="number" name="duration">
+											<label class="label mb-1 text-primary" for="name">Duration</label>
+											<input class="input rounded-2 py-2 text-grey-darker px-2 w-100" value="60" placeholder="15" type="number" name="duration">
 										</div>
 
 										<div class="mb-1 column column-12">
 											<?php echo csrf_field(); ?>
 											<input class="input rounded-2 py-2 text-grey-darker px-2" value="<?php echo $display->topic; ?>" placeholder="mudpi/lcd" type="hidden" name="topic">
-											<button id="create" class="button rounded-2 is-primary px-3 py-2 mb-2"><?php echo _("Send"); ?></button>
+											<button id="create" class="button rounded-2 is-primary px-2 py-1 text-small mb-2"><?php echo _("Send"); ?></button>
 										</div>
 									</div>
 
-									</div> <!-- /Columns -->
 							</div>
 						</div>
 					<?php }?>
