@@ -30,7 +30,7 @@
 						<div class="column column-12 sm:column-12 md:column-4 lg:column-3">
 							<div class="box bg-primary py-1">
 								<h3 class="h4"><?php echo $sensor->name; ?> (<?php echo slug($sensor->name); ?>)</h3>
-								<p class="text-grey-dark-lightest text-xs mb-1"><?php isset($sensor->pin) ? echo $sensor->pin : isset($sensor->address) ? echo $sensor->address : ''; ?></p>
+								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo isset($sensor->pin) ? $sensor->pin : isset($sensor->address) ? $sensor->address : ''; ?></p>
 								<p class="text-white font-bold h2">0</p>
 								<p class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></p>
 							</div>
