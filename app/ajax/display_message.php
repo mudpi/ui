@@ -28,8 +28,8 @@ $data = array(
 		"time" => date("Y-m-d H:i:s"),
 		"message" => $_POST["message"],
 		"duration" => $_POST["duration"],
-		"topic" => $_POST["topic"]
-	]
+	],
+	"topic" => $_POST["topic"]
 );
 
 //Connecting to Redis server on localhost 
