@@ -53,13 +53,12 @@
 						<?php foreach($displays as $display) { ?>
 						<div class="column column-12 sm:column-12 md:column-6">
 							<div class="box py-1">
-								<h3 class="h4"><?php echo $display->name; ?></h3>
+								<h3 class="h4"><?php echo $display->topic; ?></h3>
 								<span class="text-grey-dark-lightest text-xs"><?php echo $display->model; ?> - </span>
 								<?php if(isset($display->address)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1">0x<?php echo $display->address; ?>
 								<?php }?></span>
 								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $display->rows; ?> x <?php echo $display->columns; ?></p>
-								<p class="text-grey-dark-lightest text-xs mb-3"><?php echo $display->topic; ?></p>
 								
 								<div class="columns is-centered">
 									<div class="column column-12 columns">
@@ -73,6 +72,7 @@
 										</div>
 
 										<div class="mb-1 column column-12">
+											<?php echo csrf_field(); ?>
 											<input class="input rounded-2 py-2 text-grey-darker px-2 mnw-50" value="<?php echo $display->topic; ?>" placeholder="mudpi/lcd" type="hidden" name="topic">
 											<button id="create" class="button rounded-2 is-primary px-3 py-2 mb-2"><?php echo _("Send"); ?></button>
 										</div>
