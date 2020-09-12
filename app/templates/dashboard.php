@@ -20,13 +20,14 @@
 			<div class="column sm:column-12 md:column-12 lg:column-10">
 				<div class="content px-2">
 					<h1 class="h2 text-primary" id="title">Dashboard</h1>
-					<p class="mb-4 text-grey-dark" id="message">View the contents of MudPi log Files below. </p>
-					<p class="mb-4 text-grey-dark" id="message">System booted <?php echo $started_at; ?> ago.</p>
+					<p class="text-grey-dark" id="message">View the contents of MudPi log Files below. </p>
+					<p class="mb-4 text-grey-dark" id="message">System booted <?php echo timeForHumans($started_at); ?> ago.</p>
 
 
 					<h3 class="h3 text-primary">Sensors</h3>
 					<div class="columns">
 					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($sensors); ?></code></pre>
+					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($sensor_workers); ?></code></pre>
 						<?php foreach($sensors as $sensor) { ?>
 						<div class="column column-12 sm:column-12 md:column-4 lg:column-3">
 							<div class="box">
