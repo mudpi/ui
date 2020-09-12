@@ -31,7 +31,7 @@
 							<div class="box">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
 								<p class="text-grey-dark text-xs"><?php echo $sensor->type; ?></p>
-								<p class="text-grey-dark text-xs mb-3"><?php isset($sensor->pin) ? echo $sensor->pin : isset($sensor->address) ? echo $sensor->address : ''; ?></p>
+								<p class="text-grey-dark text-xs mb-3"><?php echo isset($sensor->pin) ? $sensor->pin : isset($sensor->address) ? $sensor->address : ''; ?></p>
 								<p class="text-primary h2">0</p>
 							</div>
 						</div>
