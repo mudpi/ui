@@ -176,3 +176,28 @@ function timeForHumans ($time)
 function slug($string, $spacer = "_"){
 	return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', $spacer, $string), $spacer));
 }
+
+function parseReading($type, $value = null) {
+	$type = strtolower($type);
+	switch($type) {
+		case "humidity":
+			return $value;
+			break;
+		case "bme680":
+			// {"temperature": 66.5, "humidity": 59.9, "pressure": 994.01, "gas": 36187, "altitude": 161.457}
+			return $value;
+			break;
+		case "soil":
+			return {"Moisture": $value};
+			break;
+		case "float":
+			return {"Float": $value};
+			break;
+		case "temperature":
+			return {"Temperature": $value};
+			break;
+		case "rain":
+			return {"Rain": $value};
+			break;
+	}
+}

@@ -34,8 +34,9 @@ foreach($sensor_workers as $worker) {
 
 foreach($sensors as $sensor) {
 	$sensor->key = slug($sensor->name);
-	$sensor->value = $redis->get($sensor->key);
+	$sensor->value = parseReading($sensor->type, $redis->get($sensor->key));
 }
+
 
 include 'templates/dashboard.php';
 

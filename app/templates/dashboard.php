@@ -27,12 +27,19 @@
 					<h3 class="h3 text-primary">Sensors</h3>
 					<div class="columns">
 						<?php foreach($sensors as $sensor) { ?>
-						<div class="column column-12 sm:column-12 md:column-4 lg:column-3">
+						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box bg-primary py-1 text-white">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
-								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo isset($sensor->pin) ? $sensor->pin : isset($sensor->address) ? $sensor->address : ''; ?></p>
-								<p class="text-white font-bold h2"><?php echo $sensor->value ?></p>
 								<p class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></p>
+								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo isset($sensor->pin) ? $sensor->pin : isset($sensor->address) ? $sensor->address : ''; ?></p>
+								<div class="columns">
+									<?php foreach($sensor->value as $key => $value) { ?>
+										<div class="column px-0">
+											<p class="text-white font-bold h2"><?php echo $value ?></p>
+											<p class="text-white font-bold text-xs"><?php echo $key ?></p>
+										</div>
+									<?php }?>
+								</div>
 							</div>
 						</div>
 					<?php }?>
