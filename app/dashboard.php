@@ -23,7 +23,7 @@ $redis_keys = $redis->keys("*");
 $config = json_decode(file_get_contents(MUDPI_PATH_CORE."/mudpi.config"));
 
 $sensor_workers = array_merge(array_filter($config->workers, function($v) {
-	return strcasecmp($v->type, "sensor") || strcasecmp($v->type, "i2c");
+	return strcasecmp($v->type, "sensor") == 0 || strcasecmp($v->type, "i2c") == 0;
 }));
 
 $sensors = [];
