@@ -18,8 +18,8 @@
 			<?php include "partials/navigation.php"; ?>
 			<div class="container">
 			<div class="columns is-centered">
-			<div class="column sm:column-12 md:column-10 lg:column-8">
-				<div class="content px-2">
+			<div class="column sm:column-12 md:column-10 lg:column-10">
+				<div class="content px-2 w-100">
 					<h1 class="h2 text-primary" id="title">Logs</h1>
 					<p class="mb-4 text-grey-dark" id="message">View the contents of MudPi log Files below.</p>
 
@@ -34,7 +34,7 @@
 
 					<h3 class="h3 text-primary">Wifi Config</h3>
 					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php echo $wpa_config; ?></code></pre>
-					
+
 					<h3 class="h3 text-primary">Sprout</h3>
 					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php 
 							foreach($sprout_data as $log) {

@@ -18,8 +18,8 @@
 			<?php include "partials/navigation.php"; ?>
 			<div class="container">
 			<div class="columns is-centered">
-			<div class="column sm:column-12 md:column-12 lg:column-10">
-				<div class="content px-2">
+			<div class="column sm:column-12 md:column-12">
+				<div class="content px-2 w-100">
 					<h1 class="h2 text-primary" id="title">Dashboard</h1>
 					<p class="mb-4 text-grey-dark" id="message">System booted <?php echo timeForHumans($started_at); ?> ago.</p>
 
