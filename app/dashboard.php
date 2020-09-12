@@ -35,6 +35,7 @@ foreach($sensor_workers as $worker) {
 foreach($sensors as $sensor) {
 	$sensor->key = slug($sensor->name);
 	$sensor->value = parseReading($sensor->type, $redis->get($sensor->key));
+	var_dump($sensor);
 }
 
 

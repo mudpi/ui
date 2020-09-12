@@ -31,7 +31,12 @@
 							<div class="box bg-primary py-1 text-white">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
 								<p class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></p>
-								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo isset($sensor->pin) ? $sensor->pin : isset($sensor->address) ? $sensor->address : ''; ?></p>
+								<?php if(isset($sensor->pin)) { ?>
+									<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
+								<?php }?></p>
+								<?php if(isset($sensor->address)) { ?>
+									<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->address; ?>
+								<?php }?></p>
 								<div class="columns">
 									<?php foreach($sensor->value as $key => $value) { ?>
 										<div class="column px-0">
