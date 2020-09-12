@@ -57,7 +57,7 @@
 									<div class="ml-a text-right">
 										<p class="text-grey-dark text-sm"><?php echo $display->topic; ?></p>
 										<?php if(isset($display->address)) { ?>
-											<span class="text-grey-dark text-xs mb-1">Address: 0x<?php echo $display->address; ?>
+											<span class="text-grey text-xs mb-1">Address: 0x<?php echo $display->address; ?>
 										<?php }?></span>
 									</div>
 								</div>

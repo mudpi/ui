@@ -23,10 +23,13 @@ if (!isset($_POST["topic"]) || empty($_POST["topic"]) ) {
 }
 
 $data = array(
-	"time" => date("Y-m-d H:i:s"),
-	"message" => $_POST["message"],
-	"duration" => $_POST["duration"],
-	"topic" => $_POST["topic"]
+	"event" => "Message", //Clear, ClearQueue, Message
+	"data" => [
+		"time" => date("Y-m-d H:i:s"),
+		"message" => $_POST["message"],
+		"duration" => $_POST["duration"],
+		"topic" => $_POST["topic"]
+	]
 );
 
 //Connecting to Redis server on localhost 
