@@ -11,6 +11,18 @@ set_csrf_token();
 
 setcookie("setup_completed", date("d-m-Y H:i:s"), time() + (3600 * 12)); // expires in 12hrs
 
+$readingSuffixes = [
+	"humidity" => "%",
+	"temperature" => "°",
+	"soil" => "%",
+	"moisture" => "%",
+	"float" => "",
+	"rain" => "%",
+	"altitude" => '\'',
+	"pressure" => 'hPa',
+	"gas" => 'Ω'
+];
+
 //Connecting to Redis server on localhost 
 $redis = new Redis(); 
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
