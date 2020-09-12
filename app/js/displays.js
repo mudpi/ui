@@ -42,7 +42,7 @@ function makeRequest(url, type = 'POST' , data = null, callback = null) {
 		request.onreadystatechange = callback;
 	}
 	request.open(type, url);
-	request.setRequestHeader('Accept', 'application/json'); //or application/json;charset=UTF-8
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //or application/json;charset=UTF-8
 	request.send(data);
 }
 
