@@ -7,7 +7,7 @@ begin_session();
 handle_csrf();
 
 // $json_str = file_get_contents('php://input');
-// $_POST = json_decode($json_str, true);
+// $json_obj = json_decode($json_str, true);
 
 if (!isset($_POST["message"]) || empty($_POST["message"])) {
 	response_error('Message was not set or invalid.');

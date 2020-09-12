@@ -46,20 +46,25 @@
 					</div>
 
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
-						<?php foreach($displays as $display) { ?>
+						<?php foreach($displays as $key => $display) { ?>
 						<div class="column column-12 sm:column-12 md:column-6">
-							<div class="box py-1">
-								<h3 class="h4"><?php echo $display->topic; ?></h3>
-								<span class="text-grey-dark-lightest text-xs"><?php echo $display->model; ?> - </span>
-								<?php if(isset($display->address)) { ?>
-									<span class="text-grey-dark-lightest text-xs mb-1">0x<?php echo $display->address; ?>
-								<?php }?></span>
+							<div class="box py-1 px-1">
+								<div class="flex flex-row px-1">
+									<h3 class="h4 mr-a">Display <?php echo ($key+1); ?></h3>
+									<div class="ml-a text-right">
+										<p class="text-grey-dark-lightest text-sm"><?php echo $display->topic; ?></p>
+										<?php if(isset($display->address)) { ?>
+											<span class="text-grey-dark-lightest text-xs mb-1">Address: 0x<?php echo $display->address; ?>
+										<?php }?></span>
+									</div>
+								</div>
+								
 								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $display->rows; ?> x <?php echo $display->columns; ?></p>
 								
 									<div class="columns">
 										<div class="mb-2 column column-10">
 											<label class="label mb-1 text-primary" for="name">Message</label>
-											<input class="input rounded-2 py-2 text-grey-darker px-2" placeholder="Type message here..." type="text" name="message">
+											<input class="input rounded-2 py-2 text-grey-darker px-2" placeholder="Type message here..." type="text" name="message" maxlength="<?php echo ($display->rows * $display->columns);?>">
 										</div>
 										<div class="mb-2 column column-2">
 											<label class="label mb-1 text-primary" for="name">Duration</label>
