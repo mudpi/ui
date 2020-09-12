@@ -30,18 +30,18 @@
 						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box bg-primary py-1 text-white">
 								<h3 class="h4"><?php echo $sensor->name; ?></h3>
-								<p class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></p>
+								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?></span>
 								<?php if(isset($sensor->pin)) { ?>
-									<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
-								<?php }?></p>
+									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
+								<?php }?></span>
 								<?php if(isset($sensor->address)) { ?>
-									<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->address; ?>
-								<?php }?></p>
+									<span class="text-grey-dark-lightest text-xs mb-1">x<?php echo dechex($sensor->address); ?>
+								<?php }?></span>
 								<div class="columns">
 									<?php foreach($sensor->value as $key => $value) { ?>
 										<div class="column px-0">
-											<p class="text-white font-bold h2"><?php echo $value ?></p>
-											<p class="text-white font-bold text-xs"><?php echo $key ?></p>
+											<p class="text-white font-bold h3"><?php echo $value ?></p>
+											<p class="text-white font-bold text-xs"><?php echo ucfirst($key); ?></p>
 										</div>
 									<?php }?>
 								</div>
@@ -50,9 +50,6 @@
 					<?php }?>
 					</div>
 					
-
-					<h3 class="h3 text-primary">Config</h3>
-					<pre class="mb-3 bg-grey-lighter p-2 rounded-3" style="max-height:500px;overflow:scroll;"><code><?php var_dump($config); ?></code></pre>
 				</div>
 
 
