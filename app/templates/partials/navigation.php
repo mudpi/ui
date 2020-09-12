@@ -22,9 +22,9 @@
 
         <!-- Right Side Of Navbar -->
         <ul class="nav-right">
-            <!-- Authentication Links -->=
+            <!-- Authentication Links -->
                 <!-- <li class="nav-item"><a href="{{url('/config')}}">Config</a></li> -->
-                <li class="nav-item"><a href="/logs.php">Logs</a></li>=
+                <li class="nav-item"><a href="/logs.php">Logs</a></li>
         </ul>
     </div>
     </div>
