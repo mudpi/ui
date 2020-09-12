@@ -50,16 +50,18 @@
 						<div class="column column-12 sm:column-12 md:column-6">
 							<div class="box py-1 px-1">
 								<div class="flex flex-row px-1">
-									<h3 class="h4 mr-a">Display <?php echo ($key+1); ?></h3>
+									<div class="mr-a">
+										<h3 class="h4 text-primary">Display <?php echo ($key+1); ?></h3>
+										<p class="text-grey-dark text-xs mb-1"><?php echo $display->rows; ?> x <?php echo $display->columns; ?></p>
+									</div>
 									<div class="ml-a text-right">
-										<p class="text-grey-dark-lightest text-sm"><?php echo $display->topic; ?></p>
+										<p class="text-grey-dark text-sm"><?php echo $display->topic; ?></p>
 										<?php if(isset($display->address)) { ?>
-											<span class="text-grey-dark-lightest text-xs mb-1">Address: 0x<?php echo $display->address; ?>
+											<span class="text-grey-dark text-xs mb-1">Address: 0x<?php echo $display->address; ?>
 										<?php }?></span>
 									</div>
 								</div>
 								
-								<p class="text-grey-dark-lightest text-xs mb-1"><?php echo $display->rows; ?> x <?php echo $display->columns; ?></p>
 								
 									<div class="columns">
 										<div class="mb-2 column column-10">

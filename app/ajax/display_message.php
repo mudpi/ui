@@ -30,7 +30,7 @@ $data = array(
 );
 
 //Connecting to Redis server on localhost 
-$redis = new Redis(); 
+$redis = new \Redis(); 
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
 
 if($redis->publish($data["topic"], $data)) {
