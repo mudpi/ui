@@ -181,11 +181,11 @@ function parseReading($type, $value = null) {
 	$type = strtolower($type);
 	switch($type) {
 		case "humidity":
-			return $value;
+			return json_decode($value);
 			break;
 		case "bme680":
 			// {"temperature": 66.5, "humidity": 59.9, "pressure": 994.01, "gas": 36187, "altitude": 161.457}
-			return $value;
+			return json_decode($value);
 			break;
 		case "soil":
 			return [ "Moisture" => $value ];
