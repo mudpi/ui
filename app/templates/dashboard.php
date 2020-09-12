@@ -40,7 +40,7 @@
 								<div class="columns">
 									<?php foreach($sensor->value as $key => $value) { ?>
 										<div class="column px-1">
-											<p class="text-white font-bold <?php echo (count($sensor->value) > 3) ? 'h4' : 'h3'; ?>"><?php echo $value ?></p>
+											<p class="text-white font-bold <?php echo (count((array)$sensor->value) > 3) ? 'h4' : 'h3'; ?>"><?php echo $value ?></p>
 											<p class="text-white font-bold text-xs"><?php echo ucfirst($key); ?></p>
 										</div>
 									<?php }?>
