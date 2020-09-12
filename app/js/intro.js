@@ -29,7 +29,7 @@ button.addEventListener('click', function() {
 	if (step >= 1) {
 		overlay.classList.remove('transition-out');
 		setTimeout(function() {
-			window.location.href = 'logs.php';
+			window.location.href = 'dashboard.php';
 		}, 600);
 	}
 	else {

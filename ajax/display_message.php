@@ -6,27 +6,27 @@ require '../bootstrap.php';
 begin_session();
 handle_csrf();
 
-$json_str = file_get_contents('php://input');
-$json_obj = json_decode($json_str, true);
+// $json_str = file_get_contents('php://input');
+// $_POST = json_decode($json_str, true);
 
-if (!isset($json_obj["message"]) || empty($json_obj["message"])) {
+if (!isset($_POST["message"]) || empty($_POST["message"])) {
 	response_error('Message was not set or invalid.');
-	// $json_obj["source"] = "unknown";
+	// $_POST["source"] = "unknown";
 }
 
-if (!isset($json_obj["duration"]) || empty($json_obj["duration"]) || !is_numeric($json_obj["duration"])) {
+if (!isset($_POST["duration"]) || empty($_POST["duration"]) || !is_numeric($_POST["duration"])) {
 	response_error('Duration was not set or invalid.');
 }
 
-if (!isset($json_obj["topic"]) || empty($json_obj["topic"]) ) {
+if (!isset($_POST["topic"]) || empty($_POST["topic"]) ) {
 	response_error('Topic was not set or invalid.');
 }
 
 $data = array(
 	"time" => date("Y-m-d H:i:s"),
-	"message" => $json_obj["message"],
-	"duration" => $json_obj["duration"],
-	"topic" => $json_obj["topic"]
+	"message" => $_POST["message"],
+	"duration" => $_POST["duration"],
+	"topic" => $_POST["topic"]
 );
 
 //Connecting to Redis server on localhost 

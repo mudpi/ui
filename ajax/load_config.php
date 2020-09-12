@@ -5,26 +5,26 @@ require '../bootstrap.php';
 
 begin_session();
 
-$json_str = file_get_contents('php://input');
-$json_obj = json_decode($json_str, true);
+// $json_str = file_get_contents('php://input');
+// $json_obj = json_decode($json_str, true);
 
-if (!isset($json_obj["source"]) || empty($json_obj["source"])) {
+if (!isset($_POST["source"]) || empty($_POST["source"])) {
 	response_error('Source ID was not set or invalid.');
-	// $json_obj["source"] = "unknown";
+	// $_POST["source"] = "unknown";
 }
 
-if (!isset($json_obj["boots"]) || empty($json_obj["boots"])) {
+if (!isset($_POST["boots"]) || empty($_POST["boots"])) {
 	response_error('Boot count was not set or invalid.');
 }
 
 //Todo Change to DATA
-if (!isset($json_obj["value"]) || empty($json_obj["value"])) {
+if (!isset($_POST["value"]) || empty($_POST["value"])) {
 	response_error('Values were not set or invalid.');
-} elseif (!is_array($json_obj["value"])) {
-	$json_obj["value"] = [$json_obj["value"]];
+} elseif (!is_array($_POST["value"])) {
+	$_POST["value"] = [$_POST["value"]];
 }
 
-foreach($json_obj["value"] as $key => $reading) {
+foreach($_POST["value"] as $key => $reading) {
 	if (!isset($reading["value"])) {
 		response_error('Reading Value was not set or invalid.');
 	}
@@ -39,17 +39,17 @@ foreach($json_obj["value"] as $key => $reading) {
 		$reading["sensor"] = "unknown";
 	}
 
-	$reading['boots'] = $json_obj["boots"];
-	$reading['source'] = $json_obj["source"];
+	$reading['boots'] = $_POST["boots"];
+	$reading['source'] = $_POST["source"];
 }
 
 
 $data = array(
 	"time" => date("Y-m-d H:i:s"),
-	"value" => $json_obj["value"],
-	"parsed" => $json_obj["parsed"],
-	"boots" => $json_obj["boots"],
-	"source" => $json_obj["source"]
+	"value" => $_POST["value"],
+	"parsed" => $_POST["parsed"],
+	"boots" => $_POST["boots"],
+	"source" => $_POST["source"]
 );
 
 $old_data = unserialize(file_get_contents("/etc/mudpi/sprout.txt"));
