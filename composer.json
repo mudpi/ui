@@ -1,7 +1,7 @@
 {
     "name": "mudpi/ui",
     "description": "A lightweight web dashboard to monitor MudPi.",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "type": "library",
     "keywords": ["mudpi", "garden", "ui", "php", "raspberry pi"],
     "homepage": "https://mudpi.app",
