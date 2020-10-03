@@ -28,18 +28,18 @@
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
 						<?php foreach($relays as $relay) { ?>
 						<div class="column column-12 sm:column-12 md:column-4">
-							<div class="box py-1 text-primary rounded-3 mb-2">
+							<div class="box py-1 text-primary rounded-3 mb-2 relay" id="relay-<?php echo $relay->key ?>" data-topic="<?php echo $relay->topic ?>" data-key="<?php echo $relay->key ?>">
 								<h3 class="h4"><?php echo $relay->name; ?></h3>
 								<?php if(isset($relay->pin)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1">Pin: <?php echo $relay->pin; ?>
 								<?php }?></span>
 									<span class="text-grey-dark-lightest text-xs mb-1">(<?php echo $relay->topic; ?>)</span>
+									<?php if(isset($relay->key)) { ?>
+										<p class="text-primary font-bold text-xs"><?php echo ucfirst($relay->key); ?></p>
+									<?php }?>
 								<div class="columns">
-									<div class="column px-1">
-										<p class="text-primary font-bold"><?php echo $relay->value ? "On" : "Off" ?></p>
-										<?php if(isset($relay->key)) { ?>
-											<p class="text-primary font-bold text-xs"><?php echo ucfirst($key); ?></p>
-										<?php }?>
+									<div class="column px-1 py-3">
+										<p class="text-primary font-bold h3"><?php echo $relay->value ? "ON" : "OFF" ?></p>
 									</div>
 								</div>
 							</div>
@@ -54,6 +54,8 @@
 			</div> <!-- /Columns -->
 			</div> <!-- /Column 10 -->
 		</div>
+
+		<script type="text/javascript" src="js/relays.js"></script>
 
 	</body>
 </html>

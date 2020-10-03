@@ -17,6 +17,7 @@
         <!-- Left Side Of Navbar -->
         <ul class="nav-left">
             <li class="nav-item"><a href="/dashboard.php">Dashboard</a></li>
+            <li class="nav-item"><a href="/relays.php">Relays</a></li>
             <li class="nav-item"><a href="/displays.php">Displays</a></li>
         </ul>
 
