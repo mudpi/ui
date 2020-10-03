@@ -31,7 +31,7 @@ foreach($relays as $relay) {
 	if(!isset($relay->key)) {
 		$relay->key = slug($relay->name);
 	}
-	$relay->value = $redis->get($relay->key);
+	$relay->value = $redis->get($relay->key.'_valve');
 }
 
 
