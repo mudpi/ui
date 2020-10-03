@@ -46,7 +46,7 @@ function handleResponse() {
   		var response = JSON.parse(request.responseText).data;
   		console.log(response);
     	//Request successful
-		location.reload(); 
+		setTimeout(location.reload(), 1500); 
 
 	  } else {
 	  	var response = JSON.parse(request.responseText);
