@@ -22,6 +22,7 @@
 				<div class="content px-2 w-100">
 					<h1 class="h2 text-primary" id="title">Relays</h1>
 					<p class="mb-4 text-grey-dark" id="message">Toggle relays and components attached to MudPi.</p>
+					<div id="errors" class="rounded-2 text-red-dark errors"></div>
 
 
 					<h3 class="h3 text-primary">Relays</h3>
