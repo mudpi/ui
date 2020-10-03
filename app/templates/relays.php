@@ -2,11 +2,11 @@
 <html lang="en">
 	<head>
 	    <meta charset="utf-8">
-		<title>MudPi Dashboard</title>
+		<title>MudPi Relays</title>
 	    <?php echo csrf_meta(); ?>
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description" content="MudPi UI Logs">
+	    <meta name="description" content="MudPi UI Relays">
 	    <meta name="author" content="MudPi - Eric Davisson">
 
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -20,30 +20,26 @@
 			<div class="columns is-centered">
 			<div class="column sm:column-12 md:column-12">
 				<div class="content px-2 w-100">
-					<h1 class="h2 text-primary" id="title">Dashboard</h1>
-					<p class="mb-4 text-grey-dark" id="message">System booted <?php echo timeForHumans($started_at); ?> ago.</p>
+					<h1 class="h2 text-primary" id="title">Relays</h1>
+					<p class="mb-4 text-grey-dark" id="message">Toggle relays and components attached to MudPi.</p>
 
 
-					<h3 class="h3 text-primary">Sensors</h3>
+					<h3 class="h3 text-primary">Relays</h3>
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
-						<?php foreach($sensors as $sensor) { ?>
+						<?php foreach($relays as $relay) { ?>
 						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box py-1 text-primary rounded-3 mb-2">
-								<h3 class="h4"><?php echo $sensor->name; ?></h3>
-								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?> - </span>
-								<?php if(isset($sensor->pin)) { ?>
-									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
-								<?php }?></span>
-								<?php if(isset($sensor->address)) { ?>
-									<span class="text-grey-dark-lightest text-xs mb-1">0x<?php echo $sensor->address; ?>
+								<h3 class="h4"><?php echo $relay->name; ?></h3>
+								<?php if(isset($relay->pin)) { ?>
+									<span class="text-grey-dark-lightest text-xs mb-1">Pin: <?php echo $relay->pin; ?>
 								<?php }?></span>
 								<div class="columns">
-									<?php foreach($sensor->value as $key => $value) { ?>
-										<div class="column px-1">
-											<p class="text-primary font-bold <?php echo (count((array)$sensor->value) > 3) ? 'h4' : 'h3'; ?>"><?php echo $value ?><?php echo $readingSuffixes[$key]; ?></p>
+									<div class="column px-1">
+										<p class="text-primary font-bold"><?php echo $relay->value ? "On" : "Off" ?></p>
+										<?php if(isset($relay->key)) { ?>
 											<p class="text-primary font-bold text-xs"><?php echo ucfirst($key); ?></p>
-										</div>
-									<?php }?>
+										<?php }?>
+									</div>
 								</div>
 							</div>
 						</div>

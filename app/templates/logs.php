@@ -18,7 +18,7 @@
 			<?php include "partials/navigation.php"; ?>
 			<div class="container">
 			<div class="columns is-centered">
-			<div class="column sm:column-12 md:column-10 lg:column-10">
+			<div class="column sm:column-12 md:column-12">
 				<div class="content px-2 w-100">
 					<h1 class="h2 text-primary" id="title">Logs</h1>
 					<p class="mb-4 text-grey-dark" id="message">View the contents of MudPi log Files below.</p>
