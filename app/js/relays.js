@@ -1,5 +1,4 @@
 var app = document.getElementById("app");
-var button = document.getElementById("create");
 var errors_list = document.getElementById("errors");
 
 var relays = document.querySelectorAll('.relay');
@@ -26,10 +25,6 @@ function makeRequest(url, type = 'POST' , data = null, callback = null) {
 		data = new FormData();
 	}
 
-	button.textContent = "Sending...";
-	button.disabled = true;
-	button.classList.add('is-grey');
-	button.classList.remove('is-primary');
   	errors_list.classList.remove("bg-red-light");
   	errors_list.classList.remove("p-2");
 
