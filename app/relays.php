@@ -19,14 +19,12 @@ $relays = [];
 
 if(isset($config->nodes)) {
 	if(isset($config->nodes->relays)) {
-		foreach($config->nodes->relays as $relay) {
-			array_push($relays, $relay);
-		}
+			array_push($relays, ...$config->nodes->relays);
 	}
 }
 
-foreach($config->relays as $relay) {
-	array_push($relays, $relay);
+if(isset($config->relays)) {
+	array_push($relays, ...$config->relays);
 }
 
 foreach($relays as $relay) {

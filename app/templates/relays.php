@@ -33,6 +33,7 @@
 								<?php if(isset($relay->pin)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1">Pin: <?php echo $relay->pin; ?>
 								<?php }?></span>
+									<span class="text-grey-dark-lightest text-xs mb-1">(<?php echo $relay->topic; ?>)</span>
 								<div class="columns">
 									<div class="column px-1">
 										<p class="text-primary font-bold"><?php echo $relay->value ? "On" : "Off" ?></p>
