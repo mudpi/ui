@@ -22,7 +22,7 @@ $data = array(
 $redis = new \Redis(); 
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
 
-if($redis->publish($data["topic"], json_encode($data))) {
+if($redis->publish($_POST["topic"], json_encode($data))) {
 	echo json_encode(['status' => 'OK', 'message' => 'Successfully Toggled Relay']);
 }
 else {
