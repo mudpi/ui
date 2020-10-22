@@ -8,6 +8,8 @@ MudPi UI is a web application that provides an interface to monitor MudPi. The a
 ## Documentation
 For full documentation visit [mudpi.app](https://mudpi.app/docs/setup-assistant)
 
+## Require
+In order to use UI with Mudpi you will need a PHPredis [Installing PHPredis](https://mudpi.app/guides/4)
 
 ## Contributing
 Any contributions you can make will be greatly appreciated. If you are interested in contributing please get in touch with me and submit a pull request. There is much more I would like to add support for, however being a single developer limits my scope. 
