@@ -183,6 +183,10 @@ function parseReading($type, $value = null) {
 		case "humidity":
 			return json_decode($value);
 			break;
+		case "t9602":
+			// {"temperature": 66.5, "humidity": 59.9}
+			return json_decode($value);
+			break;
 		case "bme680":
 			// {"temperature": 66.5, "humidity": 59.9, "pressure": 994.01, "gas": 36187, "altitude": 161.457}
 			return json_decode($value);
