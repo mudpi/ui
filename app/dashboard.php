@@ -12,6 +12,7 @@ set_csrf_token();
 setcookie("setup_completed", date("d-m-Y H:i:s"), time() + (3600 * 12)); // expires in 12hrs
 
 $readingSuffixes = [
+	"general" => "",
 	"humidity" => "%",
 	"temperature" => "°",
 	"soil" => "%",
@@ -38,6 +39,9 @@ if (isset($config->sensors)){
 	foreach($config->sensor as $sensor) {
 		if(!isset($sensor->name)) {
 			$sensor->name = ucwords(str_replace("_", " ", $sensor->key));
+		}
+		if(!isset($sensor->classifier)) {
+			$sensor->classifier = "general";
 		}
 		$sensor->value = parseReading($sensor->classifier, $redis->get($sensor->key.'.state'));
 	}

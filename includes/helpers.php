@@ -177,7 +177,7 @@ function slug($string, $spacer = "_"){
 	return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', $spacer, $string), $spacer));
 }
 
-function parseReading($type, $value = null) {
+function parseReading($type = "general", $value = null) {
 	$type = strtolower($type);
 	switch($type) {
 		case "humidity":
@@ -198,6 +198,9 @@ function parseReading($type, $value = null) {
 			break;
 		case "rain":
 			return [ "Rain" => $value ];
+			break;
+		default:
+			return [ "General" => $value ]
 			break;
 	}
 }
