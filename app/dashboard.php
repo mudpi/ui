@@ -48,7 +48,7 @@ if (!empty($config->sensor)){
 			if (!empty($state)) {
 				$sensor->state = json_decode($state);
 				if (is_json($sensor->state->state)) {
-					$sensor->state->state = json_decode($state)
+					$sensor->state->state = json_decode($state);
 				}
 			}
 			else {
