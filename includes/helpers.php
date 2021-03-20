@@ -200,7 +200,7 @@ function parseReading($type = "general", $value = null) {
 			return [ "Rain" => $value ];
 			break;
 		default:
-			return [ "General" => $value ]
+			return [ "General" => $value ];
 			break;
 	}
 }
