@@ -10,10 +10,10 @@ handle_csrf();
 set_csrf_token();
 
 $wpa_config = shell_exec('sudo cat '.MUDPI_CONFIG_WPA_SUPPLICANT);
-$mudpi_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/mudpi.out.log');
-$mudpi_error_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/mudpi.err.log');
+$mudpi_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/output.log');
+$mudpi_error_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/error.log');
 $auto_ap_log = shell_exec('tail -256 '.MUDPI_PATH.'/logs/auto_hotspot.log');
-$sprout_data = unserialize(file_get_contents("/etc/mudpi/sprout.txt"));
+$sprout_data = unserialize(file_get_contents("/home/mudpi/sprout.txt"));
 
 include 'templates/logs.php';
 

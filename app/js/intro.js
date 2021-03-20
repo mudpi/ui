@@ -21,7 +21,7 @@ setTimeout(function () {
 }, 600);
 setTimeout(function () {
 	button.classList.remove('transition-out');
-}, 3000);
+}, 2000);
 
 button.addEventListener('click', function() {
 	content.classList.add('transition-out');

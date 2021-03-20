@@ -13,21 +13,16 @@ set_csrf_token();
 $redis = new Redis(); 
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
 
-$started_at = strtotime($redis->get("started_at"));
-
 $config = json_decode(file_get_contents(MUDPI_PATH_CORE."/".MUDPI_CONFIG_FILE));
 
-$displays = $config->char_display;
-foreach($displays as $display) {
-	if(!isset($display->name)) {
-		$display->name = ucwords(str_replace("_", " ", $display->key));
+foreach($config->toggle as $toggle) {
+	if(!isset($toggle->name)) {
+		$toggle->name = ucwords(str_replace("_", " ", $toggle->key));
 	}
-	if(!isset($display->topic)) {
-		$display->topic = "char_display/".$display->key;
-	}
-	
+	$toggle->value = $redis->get($toggle->key.'.state');
 }
 
-include 'templates/displays.php';
+
+include 'templates/toggles.php';
 
 ?>

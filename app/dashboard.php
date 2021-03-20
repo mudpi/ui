@@ -32,22 +32,17 @@ $started_at = strtotime($redis->get("started_at"));
 // Get the stored keys and print it 
 $redis_keys = $redis->keys("*"); 
 
-$config = json_decode(file_get_contents(MUDPI_PATH_CORE."/mudpi.config"));
+$config = json_decode(file_get_contents(MUDPI_PATH_CORE."/".MUDPI_CONFIG_FILE));
 
-$sensor_workers = array_merge(array_filter($config->workers, function($v) {
-	return strcasecmp($v->type, "sensor") == 0 || strcasecmp($v->type, "i2c") == 0;
-}));
-
-$sensors = [];
-
-foreach($sensor_workers as $worker) {
-	array_push($sensors, ...$worker->sensors);
+if isset($config->sensors){
+	foreach($config->sensor as $sensor) {
+		if(!isset($sensor->name)) {
+			$sensor->name = ucwords(str_replace("_", " ", $sensor->key));
+		}
+		$sensor->value = parseReading($sensor->classifier, $redis->get($sensor->key.'.state'));
+	}
 }
 
-foreach($sensors as $sensor) {
-	$sensor->key = slug($sensor->name);
-	$sensor->value = parseReading($sensor->type, $redis->get($sensor->key));
-}
 
 
 include 'templates/dashboard.php';

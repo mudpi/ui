@@ -26,11 +26,11 @@
 
 					<h3 class="h3 text-primary">Sensors</h3>
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
-						<?php foreach($sensors as $sensor) { ?>
+						<?php foreach($config->sensor as $sensor) { ?>
 						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box py-1 text-primary rounded-3 mb-2">
-								<h3 class="h4"><?php echo $sensor->name; ?></h3>
-								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->type; ?> - </span>
+								<h3 class="h4"><?php echo $sensor->name ?? ''; ?></h3>
+								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->interface; ?> - </span>
 								<?php if(isset($sensor->pin)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
 								<?php }?></span>

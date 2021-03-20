@@ -52,10 +52,10 @@ $data = array(
 	"source" => $_POST["source"]
 );
 
-$old_data = unserialize(file_get_contents("/etc/mudpi/sprout.txt"));
+$old_data = unserialize(file_get_contents("/home/mudpi/sprout.txt"));
 $old_data[] = $data;
 
-if(file_put_contents('/etc/mudpi/sprout.txt', serialize($old_data))) {
+if(file_put_contents('/home/mudpi/sprout.txt', serialize($old_data))) {
 	echo json_encode(['status' => 'OK', 'message' => 'Successfully Saved Readings']);
 }
 else {
