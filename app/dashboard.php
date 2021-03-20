@@ -44,7 +44,7 @@ if (!empty($config->sensor)){
 			$sensor->classifier = "general";
 		}
 		try {
-			$state = $redis->get($sensor->key.'.state')
+			$state = $redis->get($sensor->key.'.state');
 			if (!empty($state)) {
 				$sensor->state = json_decode($state);
 			}

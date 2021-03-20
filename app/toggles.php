@@ -23,7 +23,7 @@ foreach($config->toggle as $toggle) {
 		$toggle->topic = "toggle/".$toggle->key;
 	}
 	try {
-		$state = $redis->get($toggle->key.'.state')
+		$state = $redis->get($toggle->key.'.state');
 		if (!empty($state)) {
 			$toggle->state = json_decode($state);
 		}
