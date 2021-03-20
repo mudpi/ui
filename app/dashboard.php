@@ -34,7 +34,7 @@ $redis_keys = $redis->keys("*");
 
 $config = json_decode(file_get_contents(MUDPI_PATH_CORE."/".MUDPI_CONFIG_FILE));
 
-if isset($config->sensors){
+if (isset($config->sensors)){
 	foreach($config->sensor as $sensor) {
 		if(!isset($sensor->name)) {
 			$sensor->name = ucwords(str_replace("_", " ", $sensor->key));
