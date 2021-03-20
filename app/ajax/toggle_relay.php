@@ -25,7 +25,7 @@ if($redis->publish('action_call', json_encode($data))) {
 	echo json_encode(['status' => 'OK', 'message' => 'Successfully Toggled '.$_POST["key"]]);
 }
 else {
-	response_error('Problem Toggling the Relay');
+	response_error('Problem Toggling the Relay or No Relay Listening');
 }
 
 ?>

@@ -19,6 +19,9 @@ foreach($config->toggle as $toggle) {
 	if(empty($toggle->name)) {
 		$toggle->name = ucwords(str_replace("_", " ", $toggle->key));
 	}
+	if(empty($toggle->topic)) {
+		$toggle->topic = "toggle/".$toggle->key;
+	}
 	$toggle->value = $redis->get($toggle->key.'.state');
 }
 
