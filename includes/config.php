@@ -10,7 +10,7 @@ define('MUDPI_WIFI_INTERFACE', 'wlan0');
 define('MUDPI_PATH', '/home/mudpi');
 // define('MUDPI_PATH', '/Users/olixr/Code/mudpi-ui-lite'); # DEBUG
 define('MUDPI_CONFIG_FILE', 'mudpi.config');
-define('MUDPI_PATH_CORE', MUDPI_PATH.'/core');
+define('MUDPI_PATH_CORE', MUDPI_PATH.'/core/mudpi');
 // define('MUDPI_PATH_CORE', MUDPI_PATH.'/app'); # DEBUG
 define('MUDPI_PATH_NETWORKING', MUDPI_PATH.'/networking');
 define('MUDPI_CACHE_PATH', sys_get_temp_dir() . '/mudpi');
