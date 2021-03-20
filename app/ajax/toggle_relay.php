@@ -14,7 +14,7 @@ if (!isset($_POST["key"]) || empty($_POST["key"]) ) {
 }
 
 $data = array(
-	"data" => '.'.$_POST["key"].".toggle"
+	"action" => '.'.$_POST["key"].".toggle"
 );
 
 //Connecting to Redis server on localhost 

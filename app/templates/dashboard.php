@@ -38,12 +38,12 @@
 									<span class="text-grey-dark-lightest text-xs mb-1">0x<?php echo $sensor->address; ?>
 								<?php }?></span>
 								<div class="columns">
-									<?php foreach($sensor->value as $key => $value) { ?>
+									<?php if (isset($sensor->state->state)) { foreach($sensor->state->state as $key => $value) { ?>
 										<div class="column px-1">
-											<p class="text-primary font-bold <?php echo (count((array)$sensor->value) > 3) ? 'h4' : 'h3'; ?>"><?php echo $value ?><?php echo $readingSuffixes[$key]; ?></p>
+											<p class="text-primary font-bold <?php echo (count((array)$sensor->state->state) > 3) ? 'h4' : 'h3'; ?>"><?php echo $value ?><?php echo $readingSuffixes[$key]; ?></p>
 											<p class="text-primary font-bold text-xs"><?php echo ucfirst($key); ?></p>
 										</div>
-									<?php }?>
+									<?php } }?>
 								</div>
 							</div>
 						</div>

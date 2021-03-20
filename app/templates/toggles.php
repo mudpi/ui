@@ -41,7 +41,7 @@
 									<?php }?>
 								<div class="columns">
 									<div class="column px-1 py-3">
-										<p class="text-primary font-bold h3"><?php echo $toggle->value ? "ON" : "OFF" ?></p>
+										<p class="text-primary font-bold h3"><?php echo $toggle->state->state ? "ON" : "OFF" ?></p>
 									</div>
 								</div>
 							</div>

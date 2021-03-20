@@ -43,7 +43,20 @@ if (!empty($config->sensor)){
 		if(empty($sensor->classifier)) {
 			$sensor->classifier = "general";
 		}
-		$sensor->value = parseReading($sensor->classifier, $redis->get($sensor->key.'.state'));
+		try {
+			$state = $redis->get($sensor->key.'.state')
+			if (!empty($state)) {
+				$sensor->state = json_decode($state);
+			}
+			else {
+				throw new Exception('No State Found');
+			}
+		} catch (Exception $e) {
+			$sensor->state (object)['component_id' => $sensor->key,
+									'state' => 0,
+									'updated_at' => '',
+									'metadata' => ''];
+		}
 	}
 }
 

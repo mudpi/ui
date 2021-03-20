@@ -22,7 +22,20 @@ foreach($config->toggle as $toggle) {
 	if(empty($toggle->topic)) {
 		$toggle->topic = "toggle/".$toggle->key;
 	}
-	$toggle->value = $redis->get($toggle->key.'.state');
+	try {
+		$state = $redis->get($toggle->key.'.state')
+		if (!empty($state)) {
+			$toggle->state = json_decode($state);
+		}
+		else {
+			throw new Exception('No State Found');
+		}
+	} catch (Exception $e) {
+		$toggle->state (object)['component_id' => $toggle->key,
+								'state' => 0,
+								'updated_at' => '',
+								'metadata' => ''];
+	}
 }
 
 
