@@ -47,6 +47,9 @@ if (!empty($config->sensor)){
 			$state = $redis->get($sensor->key.'.state');
 			if (!empty($state)) {
 				$sensor->state = json_decode($state);
+				if (is_json($sensor->state->state)) {
+					$sensor->state->state = json_decode($state)
+				}
 			}
 			else {
 				throw new Exception('No State Found');
