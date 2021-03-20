@@ -32,7 +32,7 @@
 								<h3 class="h4"><?php echo $sensor->name ?? ''; ?></h3>
 								<span class="text-grey-dark-lightest text-xs"><?php echo $sensor->interface; ?> - </span>
 								<?php if(isset($sensor->pin)) { ?>
-									<span class="text-grey-dark-lightest text-xs mb-1"><?php echo $sensor->pin; ?>
+									<span class="text-grey-dark-lightest text-xs mb-1">Pin: <?php echo $sensor->pin; ?>
 								<?php }?></span>
 								<?php if(isset($sensor->address)) { ?>
 									<span class="text-grey-dark-lightest text-xs mb-1">0x<?php echo $sensor->address; ?>

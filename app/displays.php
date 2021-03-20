@@ -19,10 +19,10 @@ $config = json_decode(file_get_contents(MUDPI_PATH_CORE."/".MUDPI_CONFIG_FILE));
 
 $displays = $config->char_display;
 foreach($displays as $display) {
-	if(!isset($display->name)) {
+	if(empty($display->name)) {
 		$display->name = ucwords(str_replace("_", " ", $display->key));
 	}
-	if(!isset($display->topic)) {
+	if(empty($display->topic)) {
 		$display->topic = "char_display/".$display->key;
 	}
 	

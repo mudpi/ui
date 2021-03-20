@@ -37,10 +37,10 @@ $config = json_decode(file_get_contents(MUDPI_PATH_CORE."/".MUDPI_CONFIG_FILE));
 
 if (isset($config->sensors)){
 	foreach($config->sensor as $sensor) {
-		if(!isset($sensor->name)) {
+		if(empty($sensor->name)) {
 			$sensor->name = ucwords(str_replace("_", " ", $sensor->key));
 		}
-		if(!isset($sensor->classifier)) {
+		if(empty($sensor->classifier)) {
 			$sensor->classifier = "general";
 		}
 		$sensor->value = parseReading($sensor->classifier, $redis->get($sensor->key.'.state'));

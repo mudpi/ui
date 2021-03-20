@@ -27,7 +27,7 @@
 
 					<h3 class="h3 text-primary">Toggles</h3>
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
-						<?php foreach($toggle as $toggle) { ?>
+						<?php foreach($config->toggle as $toggle) { ?>
 						<div class="column column-12 sm:column-12 md:column-4">
 							<div class="box py-1 text-primary rounded-3 mb-2 relay" id="relay-<?php echo $toggle->key ?>" data-topic="<?php echo $toggle->topic ?? '' ?>" data-key="<?php echo $toggle->key ?>">
 								<h3 class="h4"><?php echo $toggle->name; ?></h3>
