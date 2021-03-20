@@ -52,7 +52,7 @@ if (!empty($config->sensor)){
 				throw new Exception('No State Found');
 			}
 		} catch (Exception $e) {
-			$sensor->state (object)['component_id' => $sensor->key,
+			$sensor->state = (object)['component_id' => $sensor->key,
 									'state' => 0,
 									'updated_at' => '',
 									'metadata' => ''];

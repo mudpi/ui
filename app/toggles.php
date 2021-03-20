@@ -31,7 +31,7 @@ foreach($config->toggle as $toggle) {
 			throw new Exception('No State Found');
 		}
 	} catch (Exception $e) {
-		$toggle->state (object)['component_id' => $toggle->key,
+		$toggle->state = (object)['component_id' => $toggle->key,
 								'state' => 0,
 								'updated_at' => '',
 								'metadata' => ''];
