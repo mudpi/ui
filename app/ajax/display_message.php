@@ -27,7 +27,7 @@ $data = array(
 	"data" => [
 		"time" => date("Y-m-d H:i:s"),
 		"message" => $_POST["message"],
-		"duration" => $_POST["duration"],
+		"duration" => $_POST["duration"]
 	],
 	"topic" => $_POST["topic"]
 );
@@ -38,7 +38,7 @@ $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT);
 
 if($redis->publish($data["topic"], json_encode($data))) {
 	echo json_encode(['status' => 'OK', 
-		'message' => 'Successfully Sent Message to Queue'
+		'message' => 'Successfully Sent Message to Queue',
 		'data' => $data]);
 }
 else {
