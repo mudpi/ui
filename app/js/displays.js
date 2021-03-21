@@ -40,17 +40,17 @@ function makeRequest(url, type = 'POST' , data = null, button_element = null) {
 	request.send(data);
 }
 
-function handle_response(button_element = null) {
+function handle_response(button = null) {
 	return function() {
 		if (request.readyState === XMLHttpRequest.DONE) {
 		  if (request.status === 200 || request.status === 201) {
 			var response = JSON.parse(request.responseText).data;
 			console.log(response);
 			//Request successful
-			button_element.textContent = "Send Message";
-			button_element.disabled = false;
-			button_element.classList.remove('is-grey');
-			button_element.classList.add('is-primary');
+			button.textContent = "Send Message";
+			button.disabled = false;
+			button.classList.remove('is-grey');
+			button.classList.add('is-primary');
 
 		  } else {
 			var response = JSON.parse(request.responseText);
@@ -62,10 +62,10 @@ function handle_response(button_element = null) {
 			}
 			errors += `</ul>`;
 			errors_list.innerHTML = errors;
-			button_element.disabled = false;
-			button_element.textContent = "Create Account";
-			button_element.classList.remove('is-grey');
-			button_element.classList.add('is-white');
+			button.disabled = false;
+			button.textContent = "Create Account";
+			button.classList.remove('is-grey');
+			button.classList.add('is-white');
 			//Problem with the request (500 error)
 		  }
 		}
