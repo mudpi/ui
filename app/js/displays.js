@@ -1,17 +1,16 @@
 var app = document.getElementById("app");
-var button = document.getElementById("create");
 var errors_list = document.getElementById("errors");
 
-var message_input = document.querySelector('[name="message"]');
-var duration_input = document.querySelector('[name="duration"]');
-var topic_input = document.querySelector('[name="topic"]');
+var displays = document.querySelectorAll('.display');
 
-button.addEventListener('click', function() {
-	var formdata = new FormData();
-	formdata.append("message", message_input.value);
-	formdata.append("duration", duration_input.value);
-	formdata.append("topic", topic_input.value);
-	makeRequest('ajax/display_message.php', 'POST', formdata);
+displays.forEach(display => {
+	display.querySelector(".send_message").addEventListener('click', function() {
+		var formdata = new FormData();
+		formdata.append("message", display.querySelector('[name="message"]').value);
+		formdata.append("duration", display.querySelector('[name="duration"]').value);
+		formdata.append("topic", display.querySelector('[name="topic"]').value);
+		makeRequest('ajax/display_message.php', 'POST', formdata);
+	});
 });
   
 function makeRequest(url, type = 'POST' , data = null, callback = null) {

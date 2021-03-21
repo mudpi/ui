@@ -49,7 +49,7 @@
 					<div class="columns" style="margin-left:-10px;margin-right:-10px;">
 						<?php foreach($displays as $key => $display) { ?>
 						<div class="column column-12 sm:column-12 md:column-6">
-							<div class="box py-1 px-1">
+							<div class="box py-1 px-1 display" data-key="<?php echo $display->key;?>" data-topic="<?php echo $display->topic ?? '' ?>">
 								<div class="flex flex-row px-1">
 									<div class="mr-a">
 										<h3 class="h4 text-primary"><?php echo ($display->name); ?></h3>
@@ -78,7 +78,7 @@
 										<div class="mb-1 column column-12">
 											<?php echo csrf_field(); ?>
 											<input class="input rounded-2 py-2 text-grey-darker px-2" value="<?php echo $display->topic ?? "char_display/".$display->key; ?>" placeholder="mudpi/char_dislay" type="hidden" name="topic">
-											<button id="create" class="button rounded-2 is-primary px-2 py-1 text-small mb-2"><?php echo _("Send"); ?></button>
+											<button class="send_message" class="button rounded-2 is-primary px-2 py-1 text-small mb-2"><?php echo _("Send"); ?></button>
 										</div>
 									</div>
 
