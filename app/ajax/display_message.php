@@ -37,7 +37,9 @@ $redis = new \Redis();
 $redis->connect(MUDPI_REDIS_HOST, MUDPI_REDIS_PORT); 
 
 if($redis->publish($data["topic"], json_encode($data))) {
-	echo json_encode(['status' => 'OK', 'message' => 'Successfully Sent Message to Queue']);
+	echo json_encode(['status' => 'OK', 
+		'message' => 'Successfully Sent Message to Queue'
+		'data' => $data]);
 }
 else {
 	response_error('Problem Sending Message to Queue');
