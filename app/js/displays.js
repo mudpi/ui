@@ -13,7 +13,7 @@ displays.forEach(display => {
 	});
 });
   
-function makeRequest(url, type = 'POST' , data = null, callback = null, button_element = null) {
+function makeRequest(url, type = 'POST' , data = null, button_element = null) {
 	request = new XMLHttpRequest();
 
 	if (!request) {
@@ -32,12 +32,8 @@ function makeRequest(url, type = 'POST' , data = null, callback = null, button_e
 	errors_list.classList.remove("bg-red-light");
 	errors_list.classList.remove("p-2");
 
-	if (callback === null) {
-		request.onreadystatechange = handle_response(button_element);
-	}
-	else {
-		request.onreadystatechange = callback;
-	}
+	request.onreadystatechange = handle_response(button_element);
+	
 	request.open(type, url);
 	// request.setRequestHeader('Accept', 'application/json'); //or application/json;charset=UTF-8
 	setCSRFHeader(request, type, data);
