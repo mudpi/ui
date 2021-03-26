@@ -78,7 +78,7 @@
 										<div class="mb-1 column column-12">
 											<?php echo csrf_field(); ?>
 											<input class="input rounded-2 py-2 text-grey-darker px-2" value="<?php echo $display->topic ?? "char_display/".$display->key; ?>" placeholder="mudpi/char_dislay" type="hidden" name="topic">
-											<button class="button send_message" class="button rounded-2 is-primary px-2 py-1 text-small mb-2"><?php echo _("Send"); ?></button>
+											<button class="button is-primary send_message" class="button rounded-2 is-primary px-2 py-1 text-small mb-2"><?php echo _("Send"); ?></button>
 										</div>
 									</div>
 
