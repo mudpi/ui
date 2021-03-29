@@ -52,7 +52,7 @@
 								</div>
 								<div class="columns">
 									<div class="column sm:column-12 align-items-center">
-										<p class="text-xs text-primary-light">Updated: <?php echo isset($sensor->state->updated_at) ? timeForHumans(DateTime::createFromFormat('Y-m-d H:i:s', $sensor->state->updated_at)->format('U')) : 'never'?> ago</p>
+										<p class="text-xs text-primary-light">Updated: <?php echo ( isset($sensor->state->updated_at) && $sensor->state->updated_at ) ? timeForHumans(DateTime::createFromFormat('Y-m-d H:i:s', $sensor->state->updated_at)->format('U')) : 'never'?> ago</p>
 									</div>
 								</div>
 							</div>
